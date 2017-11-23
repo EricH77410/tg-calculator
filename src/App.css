@@ -1,0 +1,51 @@
+
+
+.nav-barcs{
+    background: black;
+    padding-left: 35%;
+    margin-bottom: 50px;
+    margin-top: 10px;
+}
+
+i{
+    padding-right: 15px; 
+}
+
+.display{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    border: 1px solid grey;
+    box-shadow: 5px 5px 8px #888;
+    padding-bottom: 15px;
+}
+
+.display img{
+    margin-top: 55px;
+    width: 250px;
+    height: 188px;
+}
+
+.striked{
+    text-decoration: line-through;
+}
+
+table{
+    width:600px;
+}
+
+.msg-warning {
+    font-size: 1.2rem;
+    background: #ffcdd2;
+    text-align: center;
+    box-shadow: 5px 2px 8px #ef9a9a;
+}
+
+.fraction {
+    margin-top: 10px;
+    text-align: center;
+    background: #DCEDC8;
+    box-shadow: 5px 5px 8px #C5E1A5;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
