@@ -33,7 +33,7 @@ export default class Display extends Component {
       let contrat, price, praticiens
       if (this.props.contract){
           contrat = this.props.contract[0].name
-          price = this.props.contract[0].price          
+          price = this.props.contract[0].price
       }
       if (this.props.prat === 1){
           praticiens = '1 praticien'
@@ -41,11 +41,21 @@ export default class Display extends Component {
           praticiens = this.props.prat+' praticiens'
       }
       const afficheMsg = !this.props.contract && this.props.cnx >1 ? <p className="msg-warning">{msg}</p>:''
+      const displayCnxPrice = this.props.cnx > 1 ? '('+numeral(this.props.realCnxPrice).format('$0,0.00')+
+      ')':''
+      const economy = () => {
+        if (this.props.cnx === 1) {
+          return 'Soit une économie de '+numeral(2136.12-1999).format('$0,0.00')
+        } else {
+          return 'Soit une économie de '+numeral((this.props.realCnxPrice + 2136.12) - this.props.total).format('$0,0.00')
+        }
+
+      }
     return (
         <div>
-            { afficheMsg }  
-        <div className="display">                         
-	        <img src="./img/cstg-visuel.jpg" alt="img-carestream"/>       
+            { afficheMsg }
+        <div className="display">
+	        <img src="./img/cstg-visuel.jpg" alt="img-carestream"/>
             <div className="lighten-4 black-text">
                 <Table className="highlight striped bordered">
                     <thead>
@@ -73,21 +83,24 @@ export default class Display extends Component {
                         </tr>
                         <tr>
                             <th><i className="small material-icons">settings_cell</i>Connexions</th>
-                            <th>{this.props.cnx}</th>
+                            <th>{this.props.cnx} <span className="striked real-price">{displayCnxPrice}</span></th>
                             <th>{numeral(this.props.cnx-1).format('$0,0.00')}</th>
                         </tr>
                         <tr>
                             <th><i className="small material-icons">euro_symbol</i>Total</th>
-                            <th></th>
+                            <th>
+                              <span className="striked">{numeral(this.props.realCnxPrice + 2136.12).format('$0,0.00')}</span>
+                              <span className="economy">{economy()}</span>
+                            </th>
                             <th>{numeral(this.props.total).format('$0,0.00')}</th>
                         </tr>
                     </tbody>
                 </Table>
-			</div>    
+			</div>
         </div>
             <div className="monthly">
                 {this.props.contract ? <Fraction pratSupp={this.props.pratPrice} price={price} nbPrat={this.props.prat}/>:''}
-                
+
             </div>
         </div>
 

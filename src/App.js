@@ -35,8 +35,9 @@ class App extends Component {
       selectedContract: null,
       nbCnx: 1,
       cnxPrice: 1,
-      softPrice: 1999
-    }  
+      softPrice: 1999,
+      cnxRealPrice: 1062
+    }
   }
 
   handleSelectedContrat = (contrat) => {
@@ -44,17 +45,20 @@ class App extends Component {
       this.setState({selectedContract:null})
     } else {
       this.setState({selectedContract: this.state.contracts.filter((c)=>c.name === contrat)})
-    }    
+    }
   }
 
   handleNbPrat = (val) => {
+    console.log('change nb prat ', val)
     if (parseInt(val,10) > 1){
       this.setState({nbPrat: parseInt(val,10)})
-    }    
+    } else {
+      this.setState({nbPrat: 1})
+    }
   }
 
   changeCnx = (val) => {
-    if (parseInt(val,10) > 1){
+    if (parseInt(val,10) >= 1){
       this.setState({nbCnx: parseInt(val,10)})
     }
   }
@@ -72,24 +76,33 @@ class App extends Component {
     return total;
   }
 
+  getRealPriceCnx = () => {
+    return (this.state.nbCnx-1) * this.state.cnxRealPrice
+  }
+
   getPratSuppPrice = () => {
     if (this.state.nbPrat === 1) {
       return 0
     } else {
       return ((this.state.nbPrat-1) * 139)
-    }    
-  } 
-  
+    }
+  }
+
   render() {
     return (
       <div className="App container">
-        <Header changeContract={this.handleSelectedContrat} changeNb={this.handleNbPrat} changeCnx={this.changeCnx}/>
-        <Display 
-          cnx={this.state.nbCnx} 
-          prat={this.state.nbPrat} 
+        <Header
+          changeContract={this.handleSelectedContrat}
+          changeNb={this.handleNbPrat}
+          changeCnx={this.changeCnx}
+        />
+        <Display
+          cnx={this.state.nbCnx}
+          prat={this.state.nbPrat}
           contract={this.state.selectedContract}
-          total={this.getTotal()} 
+          total={this.getTotal()}
           pratPrice={this.getPratSuppPrice()}
+          realCnxPrice={this.getRealPriceCnx()}
         />
       </div>
     );
