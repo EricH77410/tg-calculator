@@ -8,7 +8,7 @@
 }
 
 i{
-    padding-right: 15px; 
+    padding-right: 15px;
 }
 
 .display{
@@ -28,10 +28,21 @@ i{
 
 .striked{
     text-decoration: line-through;
+    color: #ef5350;
+}
+
+.real-price{
+  padding-left: 10px;
+}
+
+.economy{
+  display: block;
+  font-size: 1.2rem;
+  color: #2196f3;
 }
 
 table{
-    width:600px;
+    width:650px;
 }
 
 .msg-warning {
@@ -44,7 +55,7 @@ table{
 .fraction {
     margin-top: 10px;
     text-align: center;
-    background: #DCEDC8;
+    background: #c8e6c9;
     box-shadow: 5px 5px 8px #C5E1A5;
     padding-top: 10px;
     padding-bottom: 10px;
