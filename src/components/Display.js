@@ -55,7 +55,7 @@ export default class Display extends Component {
         <div>
             { afficheMsg }
         <div className="display">
-	        <img src="./img/cstg-visuel.jpg" alt="img-carestream"/>
+	        <img src="./img/cstg-visuel.jpg" alt="img-carestream" className="img-top"/>
             <div className="lighten-4 black-text">
                 <Table className="highlight striped bordered">
                     <thead>

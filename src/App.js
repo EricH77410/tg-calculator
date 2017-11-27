@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Display from './components/Display';
+import Additional from './components/Additional';
 
 const contracts = [
   {
@@ -23,6 +24,24 @@ const contracts = [
   {
     name:'Praticien supp',
     price: 139
+  }
+]
+
+const additional = [
+  {
+    name:'Pack 200 SMS',
+    priceWithContract: 36,
+    price: 46
+  },
+  {
+    name:'Pack 500 SMS',
+    priceWithContract: 85,
+    price: 106
+  },
+  {
+    name:'Pack 1000 SMS',
+    priceWithContract: 155,
+    price: 198
   }
 ]
 
@@ -104,6 +123,11 @@ class App extends Component {
           pratPrice={this.getPratSuppPrice()}
           realCnxPrice={this.getRealPriceCnx()}
         />
+        <div className="separator">
+          <h3>Services additionnels</h3>
+        </div>
+        
+        <Additional add={additional}/>
       </div>
     );
   }

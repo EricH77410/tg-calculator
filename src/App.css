@@ -1,10 +1,9 @@
 
-
 .nav-barcs{
-    background: black;
-    padding-left: 35%;
+    background: black;    
     margin-bottom: 50px;
     margin-top: 10px;
+    padding-left: 35%;
 }
 
 i{
@@ -20,7 +19,12 @@ i{
     padding-bottom: 15px;
 }
 
-.display img{
+.img-top{
+    margin-top: 55px;
+    width: 250px;
+    height: 188px;
+}
+.img-agenda{
     margin-top: 55px;
     width: 250px;
     height: 188px;
@@ -59,4 +63,21 @@ table{
     box-shadow: 5px 5px 8px #C5E1A5;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.separator {
+    text-align: center;
+    border: solid 1px grey;
+    margin-top: 20px;
+    box-shadow: 5px 5px 8px #888;
+}
+
+.additional{
+    margin-bottom: 40px;    
+    font-size: 1.5rem;
+}
+
+.sms-ico{
+    width: 45px;
+    height: 58px;           
 }

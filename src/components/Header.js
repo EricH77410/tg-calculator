@@ -20,7 +20,7 @@ class Header extends React.Component {
     render(){
         return (
             <div>
-                <Navbar className="nav-barcs" brand='CS Trophy Gestion ADF 2017' right></Navbar>
+                <Navbar className="nav-barcs" brand='CS Trophy Gestion ADF 2017' ></Navbar>
             <Row>
                 <Input
                     placeholder="Combien de praticiens"
