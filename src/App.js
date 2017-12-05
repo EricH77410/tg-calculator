@@ -55,7 +55,7 @@ class App extends Component {
       nbCnx: 1,
       cnxPrice: 1,
       softPrice: 1999,
-      cnxRealPrice: 1062
+      cnxRealPrice: 1102
     }
   }
 

@@ -16,9 +16,9 @@ const Fraction = (props) =>{
     }
     return (
         <div className="fraction">
-            <p>Coût total du contrat de maintenance : {numeral(total()).format('$0,0.00')}</p>
-            <p>Coût mensuel du contrat de maintenance : {numeral(getMonthAmount()).format('$0,0.00')}</p>
-            {prixParPrat()}
+            <p className="frac-total">Coût total du contrat de maintenance : {numeral(total()).format('$0,0.00')}</p>
+            <p className="frac-month">Coût mensuel du contrat de maintenance : {numeral(getMonthAmount()).format('$0,0.00')}</p>
+            <p className="frac-prat">{prixParPrat()}</p>
         </div>
     )
 }
